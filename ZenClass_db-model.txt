@@ -1,0 +1,64 @@
+DB model for Guvi Zen class:-
+
+CREATE TABLE Student (
+    Student_ID INT PRIMARY KEY,
+    Student_Name VARCHAR(25) NOT NULL,
+    Batch_Name VARCHAR(50), 
+    Email VARCHAR(30) UNIQUE NOT NULL,
+    Mobile_Number VARCHAR(10) NOT NULL
+);
+
+CREATE TABLE Class (
+    Class_Day_Id  INT AUTO_INCREMENT  PRIMARY KEY,    
+    Topic VARCHAR(45) NOT NULL,
+    ScheduleDate DATE NOT NULL,
+    ScheduleTime TIME NOT NULL,
+    Contents TEXT,
+    Activities TEXT,
+    Task_Id INT 
+);
+
+CREATE TABLE TASK (
+    Task_Id PRIMARY KEY,
+    Task_Name VARCHAR(50),
+    Student_ID INT,
+    Student_Name VARCHAR(25),
+    Submitted_Date DATE,
+    Batch_Name VARCHAR(50)
+);
+
+CREATE TABLE Queries (
+    Query_ID INT PRIMARY KEY,
+    Student_ID INR, 
+    Category VARCHAR(50) NOT NULL,
+    Language VARCHAR(45) NOT NULL,
+    Title VARCHAR(45) NOT NULL,
+    Description TEXT,
+    AvailableTime DATETIME
+);
+
+CREATE TABLE MockInterview (
+    Interview_ID INT AUTO_INCREMENT PRIMARY KEY,
+    Round INT,
+    Interview_Date DATE,
+    Overall_Score DECIMAL(4, 2),
+    Comments TEXT,
+    Interviewer_Name VARCHAR(45),
+    Topics VARCHAR(45),
+    Student_ID INT
+);
+
+CREATE TABLE Leaderboard (
+    Leaderboard_Rank_Id INT PRIMARY KEY,
+    Student_Name VARCHAR(25) NOT NULL,
+    Batch_Name VARCHAR(50),
+    Learning VARCHAR(40),
+    Student_ID INT
+);
+
+
+
+
+
+
+
